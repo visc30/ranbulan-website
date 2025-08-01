@@ -38,6 +38,7 @@
       text-decoration: none;
       border-radius: 8px;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .button:hover {
@@ -67,6 +68,11 @@
       color: #ccc;
     }
 
+    #download-options {
+      display: none;
+      margin-top: 20px;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2em;
@@ -86,9 +92,13 @@
 
     <div class="section">
       <h2>⬇️ Full Client Downloads</h2>
-      <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
-      <a class="button" href="https://drive.google.com/file/d/15L1uJREvtOwDPGD3eF5_FVbTcPPj4rD_/view?usp=sharing" target="_blank">Google Drive</a>
-      <a class="button" href="https://mega.nz/file/UfcSgDCL#ao8lIWWbqijdYGeobq6Bm7OheG9uLgADlkFzF4YVQ0M" target="_blank">Mega.nz</a>
+      <button class="button" onclick="showDownloadOptions()">Download</button>
+
+      <div id="download-options">
+        <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
+        <a class="button" href="https://drive.google.com/file/d/15L1uJREvtOwDPGD3eF5_FVbTcPPj4rD_/view?usp=sharing" target="_blank">Google Drive</a>
+        <a class="button" href="https://mega.nz/file/UfcSgDCL#ao8lIWWbqijdYGeobq6Bm7OheG9uLgADlkFzF4YVQ0M" target="_blank">Mega.nz</a>
+      </div>
     </div>
 
     <div class="section">
@@ -106,5 +116,11 @@
       &copy; 2025 Ranbulan. All rights reserved.
     </footer>
   </div>
+
+  <script>
+    function showDownloadOptions() {
+      document.getElementById("download-options").style.display = "block";
+    }
+  </script>
 </body>
 </html>
