@@ -20,6 +20,7 @@
       background-color: rgba(0, 0, 0, 0.6);
       min-height: 100vh;
       padding: 40px 20px;
+      position: relative;
     }
 
     h1 {
@@ -73,6 +74,25 @@
       margin-top: 20px;
     }
 
+    #mute-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 2px solid #ff4d4f;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.9em;
+      transition: 0.3s;
+    }
+
+    #mute-button:hover {
+      background: #ff4d4f;
+      color: #fff;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2em;
@@ -82,18 +102,23 @@
         width: 80%;
         font-size: 1em;
       }
+
+      #mute-button {
+        font-size: 0.8em;
+        padding: 8px 16px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="overlay">
+    <button id="mute-button">🔊 Mute</button>
     <h1>🔥 Ranbulan - Official Server 🔥</h1>
     <p>Welcome to the official download page of Ranbulan.</p>
 
     <div class="section">
       <h2>⬇️ Full Client Downloads</h2>
       <button class="button" onclick="showDownloadOptions(event)">Download</button>
-
       <div id="download-options">
         <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
         <a class="button" href="https://drive.google.com/file/d/15L1uJREvtOwDPGD3eF5_FVbTcPPj4rD_/view?usp=sharing" target="_blank">Google Drive</a>
@@ -117,10 +142,9 @@
     </footer>
   </div>
 
-  <!-- Background Music -->
-  <audio id="bg-music" loop>
-    <!-- ✅ CHANGE THIS LINK TO YOUR OWN MP3 WHEN READY -->
-    <source src="https://cdn.pixabay.com/audio/2022/03/15/audio_9284adf1a8.mp3" type="audio/mpeg">
+  <!-- ✅ Background Music -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://github.com/visc30/ranbulan-assets/raw/refs/heads/main/Ran%20Online%20(%EB%9E%80%20%EC%98%A8%EB%9D%BC%EC%9D%B8)%20Original%20Soundtrack%20-%20Crazy%20Time%20Theme%20(BGM)%20(HD).mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
 
@@ -130,14 +154,24 @@
       event.target.style.display = "none";
     }
 
-    // Background music logic
     const music = document.getElementById("bg-music");
+    const muteButton = document.getElementById("mute-button");
     let hasStarted = false;
 
     document.addEventListener("click", () => {
       if (!hasStarted) {
         music.play().catch(err => console.log("Autoplay blocked:", err));
         hasStarted = true;
+      }
+    });
+
+    muteButton.addEventListener("click", () => {
+      if (music.muted) {
+        music.muted = false;
+        muteButton.textContent = "🔊 Mute";
+      } else {
+        music.muted = true;
+        muteButton.textContent = "🔇 Unmute";
       }
     });
   </script>
