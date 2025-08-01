@@ -73,6 +73,26 @@
       margin-top: 20px;
     }
 
+    #mute-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
+      border: 2px solid #ff4d4f;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      cursor: pointer;
+      z-index: 1000;
+    }
+
+    #mute-button:hover {
+      background: #ff4d4f;
+      color: #fff;
+    }
+
     @media (max-width: 600px) {
       h1 {
         font-size: 2em;
@@ -117,11 +137,48 @@
     </footer>
   </div>
 
+  <!-- Background Music -->
+  <audio id="bg-music" loop autoplay muted>
+    <source src="https://www.mediafire.com/file/h6xuzatepu9ibm5/Ran+Online+(란+온라인)+Original+Soundtrack+-+Crazy+Time+Theme+(BGM)+(HD).mp3/file" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <button id="mute-button" title="Toggle Music">🔇</button>
+
   <script>
     function showDownloadOptions(event) {
       document.getElementById("download-options").style.display = "block";
       event.target.style.display = "none";
     }
+
+    // Music Toggle Logic
+    const bgMusic = document.getElementById("bg-music");
+    const muteButton = document.getElementById("mute-button");
+
+    window.addEventListener('load', () => {
+      // Fade in volume (0 → 1)
+      bgMusic.volume = 0;
+      bgMusic.muted = false;
+      let volume = 0;
+      const fadeIn = setInterval(() => {
+        if (volume < 1) {
+          volume += 0.05;
+          bgMusic.volume = volume;
+        } else {
+          clearInterval(fadeIn);
+        }
+      }, 200);
+    });
+
+    muteButton.addEventListener("click", () => {
+      if (bgMusic.muted) {
+        bgMusic.muted = false;
+        muteButton.textContent = "🔇";
+      } else {
+        bgMusic.muted = true;
+        muteButton.textContent = "🔊";
+      }
+    });
   </script>
 </body>
 </html>
