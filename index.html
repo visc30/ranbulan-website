@@ -92,9 +92,9 @@
 
     <div class="section">
       <h2>⬇️ Full Client Downloads</h2>
-      <button class="button" onclick="showDownloadOptions()">Download</button>
+      <button class="button" onclick="showDownloadOptions(event)">Download</button>
 
-      <div id="download-options">
+      <div id="download-options" style="display: none;">
         <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
         <a class="button" href="https://drive.google.com/file/d/15L1uJREvtOwDPGD3eF5_FVbTcPPj4rD_/view?usp=sharing" target="_blank">Google Drive</a>
         <a class="button" href="https://mega.nz/file/UfcSgDCL#ao8lIWWbqijdYGeobq6Bm7OheG9uLgADlkFzF4YVQ0M" target="_blank">Mega.nz</a>
@@ -118,8 +118,9 @@
   </div>
 
   <script>
-    function showDownloadOptions() {
+    function showDownloadOptions(event) {
       document.getElementById("download-options").style.display = "block";
+      event.target.style.display = "none";
     }
   </script>
 </body>
