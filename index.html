@@ -9,15 +9,21 @@
 .section-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start; /* changed from center */
+  align-items: stretch; /* 🧠 KEY: makes both columns match height */
   width: 100%;
   max-width: 1200px;
   padding: 40px 80px;
   gap: 60px;
   flex-wrap: wrap;
-  min-height: 360px; /* Add a minimum height to maintain balance */
-  position: relative;
 }
+
+.section.column {
+  flex: 1; /* 🧠 Equal width */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Aligns content to the top */
+}
+
 .community-section {
   margin-top: -80px; /* Adjust this value to match the height of content on the left */
 }
@@ -189,22 +195,26 @@
     <p>Welcome to the official website of Ranbulan.</p>
 
 <div class="section-row">
-  <div class="section left-align">
-    <h2>⬇️ Full Client Downloads</h2>
-    <button class="button" onclick="showDownloadOptions(event)">Download</button>
-    <div id="download-options">
-      <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
-      <a class="button" href="https://mega.nz/file/UfcSgDCL#ao8lIWWbqijdYGeobq6Bm7OheG9uLgADlkFzF4YVQ0M" target="_blank">Mega.nz</a>
-    </div>
+  <div class="section column">
+    <div class="left-align">
+      <h2>⬇️ Full Client Downloads</h2>
+      <button class="button" onclick="showDownloadOptions(event)">Download</button>
+      <div id="download-options">
+        <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
+        <a class="button" href="https://mega.nz/file/UfcSgDCL#ao8lIWWbqijdYGeobq6Bm7OheG9uLgADlkFzF4YVQ0M" target="_blank">Mega.nz</a>
+      </div>
 
     <h2>🛠 Manual Patch</h2>
-    <a class="button disabled" title="Coming Soon">Download Manual Patch</a>
+      <a class="button disabled" title="Coming Soon">Download Manual Patch</a>
+    </div>
   </div>
 
-  <div class="section right-align community-section">
-    <h2>📌 Join Our Community</h2>
-    <a class="button" href="https://www.facebook.com/ranbulanph/" target="_blank">Facebook Page</a>
-    <a class="button" href="https://www.facebook.com/groups/ranbulanph" target="_blank">Facebook Group</a>
+  <div class="section column">
+    <div class="right-align">
+      <h2>📌 Join Our Community</h2>
+      <a class="button" href="https://www.facebook.com/ranbulanph/" target="_blank">Facebook Page</a>
+      <a class="button" href="https://www.facebook.com/groups/ranbulanph" target="_blank">Facebook Group</a>
+    </div>
   </div>
 </div>
 
