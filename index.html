@@ -82,8 +82,18 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin-left: 80px; /* Adjust distance from left */
+      margin-left: 80px;
       text-align: left;
+    }
+
+    .right-align {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      margin-right: 80px;
+      text-align: right;
     }
 
     h2 {
@@ -145,10 +155,11 @@
         padding: 8px 16px;
       }
 
-      .left-align {
+      .left-align,
+      .right-align {
         align-items: center;
         text-align: center;
-        margin-left: 0;
+        margin: 0;
       }
     }
   </style>
@@ -175,7 +186,7 @@
       <a class="button disabled" title="Coming Soon">Download Manual Patch</a>
     </div>
 
-    <div class="section">
+    <div class="section right-align">
       <h2>📌 Join Our Community</h2>
       <a class="button" href="https://www.facebook.com/ranbulanph/" target="_blank">Facebook Page</a>
       <a class="button" href="https://www.facebook.com/groups/ranbulanph" target="_blank">Facebook Group</a>
