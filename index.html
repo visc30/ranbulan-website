@@ -9,12 +9,17 @@
 .section-row {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start; /* changed from center */
   width: 100%;
   max-width: 1200px;
   padding: 40px 80px;
   gap: 60px;
-  flex-wrap: wrap; /* Optional: makes it responsive */
+  flex-wrap: wrap;
+  min-height: 360px; /* Add a minimum height to maintain balance */
+  position: relative;
+}
+.community-section {
+  margin-top: 80px; /* Adjust this value to match the height of content on the left */
 }
 
     body {
