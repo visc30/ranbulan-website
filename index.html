@@ -6,6 +6,27 @@
   <title>Ranbulan - Official Server</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
+.announcement-banner {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #ffcc00;
+  color: #000;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
 .note {
   font-size: 0.7rem;
   color: #ccc;
@@ -194,6 +215,10 @@
   </style>
 </head>
 <body>
+<div class="announcement-banner">
+  🎉 Open Beta Test: August 16, 2025 [5:00PM PH TIME]
+</div>
+
 
   <div class="overlay">
     <img src="https://raw.githubusercontent.com/visc30/ranbulan-assets/refs/heads/main/weblogo.png" alt="Ranbulan Logo" class="logo" />
