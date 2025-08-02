@@ -6,27 +6,6 @@
   <title>Ranbulan - Official Server</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap" rel="stylesheet">
   <style>
-.left-align .button {
-  display: inline-block;
-}
-
-.left-align {
-  align-self: flex-start;
-  text-align: left;
-  width: 50%;
-  margin-left: 50%; /* Adjust this to fine-tune placement */
-}
-
-
-.official-title {
-  font-family: 'Orbitron', Arial; /* change to any font you like */
-  color: #ffffff;                      /* text color */
-  /* background-color: #ffffff;/          /* background color */
-  padding: 10px 10px;                 /* space around text */
-  /*border-radius: 0px;                /* rounded corners */
-  display: inline-block;              /* makes background wrap only the text */
-}
-
     body {
       margin: 0;
       font-family: 'Montserrat', sans-serif;
@@ -60,7 +39,6 @@
       font-size: 3em;
       margin-top: 20px;
       margin-bottom: 5px;
-      /*text-shadow: 0 0 0px #ff4d4f; */
     }
 
     p {
@@ -79,7 +57,6 @@
       border-radius: 8px;
       transition: 0.3s;
       cursor: pointer;
-      /*box-shadow: 0 0 10px #ffffff; */
     }
 
     .button:hover {
@@ -99,10 +76,27 @@
       margin: 20px 0;
     }
 
+    .left-align {
+      width: 100%;
+      max-width: 1200px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      margin-left: 80px; /* Adjust distance from left */
+      text-align: left;
+    }
+
     h2 {
       margin-bottom: 20px;
       font-size: 1.8em;
       text-shadow: 0 0 10px #000;
+    }
+
+    .official-title {
+      font-family: 'Orbitron', Arial;
+      color: #ffffff;
+      padding: 10px 10px;
+      display: inline-block;
     }
 
     footer {
@@ -128,7 +122,6 @@
       cursor: pointer;
       font-size: 0.9em;
       transition: 0.3s;
-      /*box-shadow: 0 0 10px #ff4d4f80;*/
     }
 
     #mute-button:hover {
@@ -151,6 +144,12 @@
         font-size: 0.8em;
         padding: 8px 16px;
       }
+
+      .left-align {
+        align-items: center;
+        text-align: center;
+        margin-left: 0;
+      }
     }
   </style>
 </head>
@@ -163,7 +162,7 @@
     <p>Welcome to the official website of Ranbulan.</p>
 
     <div class="section left-align">
-  <h2>⬇️ Full Client Downloads</h2>
+      <h2>⬇️ Full Client Downloads</h2>
       <button class="button" onclick="showDownloadOptions(event)">Download</button>
       <div id="download-options">
         <a class="button" href="https://www.mediafire.com/file/bg9b6aaokaeqq1y/RANbulan+Installer.exe/file" target="_blank">Mediafire</a>
@@ -172,7 +171,7 @@
     </div>
 
     <div class="section left-align">
-  <h2>🛠 Manual Patch</h2>
+      <h2>🛠 Manual Patch</h2>
       <a class="button disabled" title="Coming Soon">Download Manual Patch</a>
     </div>
 
